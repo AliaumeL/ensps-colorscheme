@@ -43,6 +43,9 @@
 % \DoNotIndex{\@ne}
 % \DoNotIndex{\advance,\begingroup,\catcode,\closein}
 % \DoNotIndex{\closeout,\day,\def,\edef,\else,\empty,\endgroup}
+% \DoNotIndex{\foreach,\subitem,\hue,\letter,\hdclindex}
+% \DoNotIndex{\begin,\colorlet,\definecolor,\intensity,\end,\shade}
+% \DoNotIndex{\y,\x,\xglobal,\newcommand,\name,\node,\variant}
 % \title{The \textsf{ensps} package
 %    \thanks{This document corresponds to \textsf{ensps}~\fileversion,
 %    dated \filedate.}
@@ -91,15 +94,14 @@
 %     \enspscolors
 % \end{center}
 %
-% \DescribeEnv{YOURENV}
-% Put description of environment |YOURENV| here.
-%
 % \MaybeStop{\PrintIndex}
 %
 % \section{Implementation}
 %
 % \begin{macro}{\enspscolordefs}
-% Put explanation of |\enspscolordefs|'s implementation here.
+% Here we define the colors for the ENS Paris-Saclay theme.
+% The main colors are hard coded, and the \texttt{bg} and \texttt{hint} colors
+% are then computed from the main colors.
 %    \begin{macrocode}
 \definecolor{Prune}{RGB}{99,0,60}
 \definecolor{A1}{HTML}{000000}

@@ -3,7 +3,14 @@
 ensps.sty: ensps.ins
 	latex ensps.ins
 
+# We need to use the classical several
+# pass compilation to get everything right
+# gind.ist is a specific style for the index
+# that is compatible with dtx files.
+# https://tex.stackexchange.com/questions/84870/index-completely-messed-up-in-dtx-file
 ensps.pdf: ensps.dtx ensps.sty
+	pdflatex ensps.dtx
+	makeindex -s gind.ist ensps.idx
 	pdflatex ensps.dtx
 
 install:
