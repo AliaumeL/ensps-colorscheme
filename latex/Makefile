@@ -10,6 +10,7 @@ ensps.sty: ensps.ins
 # https://tex.stackexchange.com/questions/84870/index-completely-messed-up-in-dtx-file
 ensps.pdf: ensps.dtx ensps.sty
 	pdflatex ensps.dtx
+	makeindex -s gglo.ist -o ensps.gls ensps.glo
 	makeindex -s gind.ist ensps.idx
 	pdflatex ensps.dtx
 
