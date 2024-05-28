@@ -9,7 +9,7 @@ jobs:
   continuous-integration:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/AliaumeL/ensps-colorscheme:main
+      image: ghcr.io/aliaumel/ensps-colorscheme:main
     steps:
       - uses: actions/checkout@v4
       - run: |
