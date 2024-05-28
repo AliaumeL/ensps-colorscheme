@@ -1,6 +1,8 @@
+[![Github CI](https://img.shields.io/github/actions/workflow/status/AliaumeL/ensps-colorscheme/continuous_integration.yml)](https://github.com/AliaumeL/ensps-colorscheme/actions/workflows/continuous_integration.yml)
+[![CTAN: Version](https://img.shields.io/ctan/v/ensps)](http://www.ctan.org/pkg/ensps)
+[![CTAN: License](https://img.shields.io/ctan/l/ensps)](http://www.ctan.org/pkg/ensps)
+
 # ENSPS Colorscheme
-
-
 
 Université Paris-Saclay Colorscheme for various purposes. This repository tries
 to implement recommendations from the [Université
@@ -18,8 +20,8 @@ formats.
 
 
 - [x] Implement the colorscheme in LaTeX
-- [ ] Implement the colorscheme in HTML/CSS
-- [ ] Implement the colorscheme as Gimp and Inkscape palettes
+- [x] Implement the colorscheme in HTML/CSS
+- [x] Implement the colorscheme as Gimp and Inkscape palettes
 - [ ] Create a beamer theme 
 
 ## The colorscheme 
@@ -47,3 +49,15 @@ formats.
 | B5    | 64,183,105  | #40B769 |
 | C5    | 140,198,62  | #8CC63E |
 | D5    | 213,223,61  | #D5DF3D |
+
+# Development
+
+We provide our own Docker image based on Alpine to build the project. This
+image is automatically uploaded to the GitHub Container Registry as
+`ghcr.io/aliaumel/ensps-colorscheme`.
+
+# Thanks
+
+- [Paolo Brasolin](https://github.com/paolobrasolin) for his [CTAN submit
+  action](https://github.com/paolobrasolin/ctan-submit-action)
+

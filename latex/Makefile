@@ -1,3 +1,5 @@
+.PHONY: lint clean
+
 ensps.sty: ensps.ins
 	latex ensps.ins
 
@@ -10,6 +12,10 @@ install:
 
 ensps.zip: ensps.sty ensps.pdf
 	zip ensps.zip ensps.sty ensps.pdf
+
+lint: ensps.sty
+	chktex ensps.dtx
+	chktex ensps.sty
 
 clean:
 	rm -rf ensps.pdf \

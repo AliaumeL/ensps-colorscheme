@@ -1,0 +1,35 @@
+name: Deploy to CTAN
+
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+
+jobs:
+  build-package:
+    uses: ./.github/workflows/continuous-integration.yml
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-package
+    permissions:
+      contents: write
+    steps:
+      - name: Get artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ensps-latex.zip
+      - name: Deploy to CTAN
+        uses: paolobrasolin/ctan-submit-action@v1
+        with:
+          action: upload
+          file_path: ensps-latex.zip
+          fields: |
+            pkg: ensps
+            version: ${{ github.ref_name }}
+            uploader: Aliaume Lopez
+            email: ad.lopez@uw.edu.pl
+            update: "true"
+      - uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: ensps-latex.zip
