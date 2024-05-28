@@ -1,4 +1,4 @@
-[![Github CI](https://img.shields.io/github/actions/workflow/status/AliaumeL/ensps-colorscheme/continuous_integration.yml)](https://github.com/AliaumeL/ensps-colorscheme/actions/workflows/continuous_integration.yml)
+[![Github CI](https://img.shields.io/github/actions/workflow/status/AliaumeL/ensps-colorscheme/continuous-integration.yml)](https://github.com/AliaumeL/ensps-colorscheme/actions/workflows/continuous-integration.yml)
 [![CTAN: Version](https://img.shields.io/ctan/v/ensps)](http://www.ctan.org/pkg/ensps)
 [![CTAN: License](https://img.shields.io/ctan/l/ensps)](http://www.ctan.org/pkg/ensps)
 
