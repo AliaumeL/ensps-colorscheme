@@ -8,6 +8,9 @@ install:
 	cp ensps.sty ~/texmf/tex/latex/ensps/
 	cp ensps.pdf ~/texmf/doc/latex/ensps/
 
+ensps.zip: ensps.sty ensps.pdf
+	zip ensps.zip ensps.sty ensps.pdf
+
 clean:
 	rm -rf ensps.pdf \
 		   ensps.aux \
