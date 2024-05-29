@@ -22,7 +22,7 @@ install:
 	cp $(PKG).sty ~/texmf/tex/latex/$(PKG).
 	cp $(PKG)-doc.pdf ~/texmf/doc/latex/$(PKG).
 
-$(PKG).zip: $(PKG).sty $(PKG).pdf
+$(PKG).zip: $(PKG).sty $(PKG)-doc.pdf
 	mkdir $(PKG)
 	cp Makefile $(PKG)/Makefile
 	cp LICENSE  $(PKG)/LICENSE
