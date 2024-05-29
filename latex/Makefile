@@ -25,6 +25,7 @@ install:
 $(PKG).zip: $(PKG).sty $(PKG).pdf
 	mkdir $(PKG)
 	cp Makefile $(PKG)/Makefile
+	cp LICENSE  $(PKG)/LICENSE
 	cp README.md $(PKG)/README.md
 	cp $(PKG).sty $(PKG)/$(PKG).sty
 	cp $(PKG)-doc.pdf $(PKG)/$(PKG)-doc.pdf
