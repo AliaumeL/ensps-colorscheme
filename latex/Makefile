@@ -1,38 +1,51 @@
 .PHONY: lint clean
 
-ensps.sty: ensps.ins
-	latex ensps.ins
+PKG=ensps-colorscheme
+DOC=$(PKG)-doc.pdf
+
+$(PKG).sty: $(PKG).ins
+	latex $(PKG).ins
 
 # We need to use the classical several
 # pass compilation to get everything right
 # gind.ist is a specific style for the index
 # that is compatible with dtx files.
 # https://tex.stackexchange.com/questions/84870/index-completely-messed-up-in-dtx-file
-ensps.pdf: ensps.dtx ensps.sty
-	pdflatex ensps.dtx
-	makeindex -s gglo.ist -o ensps.gls ensps.glo
-	makeindex -s gind.ist ensps.idx
-	pdflatex ensps.dtx
+$(PKG)-doc.pdf: $(PKG).dtx $(PKG).sty
+	pdflatex $(PKG).dtx
+	makeindex -s gglo.ist -o $(PKG).gls $(PKG).glo
+	makeindex -s gind.ist $(PKG).idx
+	pdflatex $(PKG).dtx
+	mv $(PKG).pdf $(PKG)-doc.pdf
 
 install:
-	cp ensps.sty ~/texmf/tex/latex/ensps/
-	cp ensps.pdf ~/texmf/doc/latex/ensps/
+	cp $(PKG).sty ~/texmf/tex/latex/$(PKG).
+	cp $(PKG)-doc.pdf ~/texmf/doc/latex/$(PKG).
 
-ensps.zip: ensps.sty ensps.pdf
-	zip ensps.zip ensps.sty ensps.pdf
+$(PKG).zip: $(PKG).sty $(PKG).pdf
+	mkdir $(PKG)
+	cp Makefile $(PKG)/Makefile
+	cp README.md $(PKG)/README.md
+	cp $(PKG).sty $(PKG)/$(PKG).sty
+	cp $(PKG)-doc.pdf $(PKG)/$(PKG)-doc.pdf
+	cp $(PKG).dtx $(PKG)/$(PKG).dtx
+	cp $(PKG).ins $(PKG)/$(PKG).ins
+	zip -r $(PKG).zip $(PKG)
 
-lint: ensps.sty
-	chktex ensps.dtx
-	chktex ensps.sty
+
+lint: $(PKG).sty
+	chktex $(PKG).dtx
+	chktex $(PKG).sty
 
 clean:
-	rm -rf ensps.pdf \
-		   ensps.aux \
-		   ensps.dvi \
-		   ensps.glo \
-		   ensps.hd \
-		   ensps.idx \
-		   ensps.log \
-		   ensps.out \
-		   ensps.pdf \
-		   ensps.sty
+	rm -rf $(PKG).pdf \
+		   $(PKG).aux \
+		   $(PKG).dvi \
+		   $(PKG).glo \
+		   $(PKG).hd \
+		   $(PKG).idx \
+		   $(PKG).log \
+		   $(PKG).out \
+		   $(PKG).pdf \
+		   $(PKG).sty \
+		   $(PKG).zip

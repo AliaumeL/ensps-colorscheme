@@ -13,11 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          cd latex && make ensps.zip
+          cd latex && make ensps-colorscheme.zip
       - uses: actions/upload-artifact@v4
         with:
           name: ensps-latex.zip
-          path: latex/ensps.zip
+          path: latex/ensps-colorscheme.zip
 
 
 
