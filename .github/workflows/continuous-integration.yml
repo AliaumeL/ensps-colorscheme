@@ -16,6 +16,14 @@ jobs:
           cd latex && make ensps-colorscheme.zip
       - uses: actions/upload-artifact@v4
         with:
+          name: ensps-colorscheme.css
+          path: css/ensps.css
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ensps-colorscheme.gpl
+          path: gimp/ensps.gpl
+      - uses: actions/upload-artifact@v4
+        with:
           name: ensps-latex.zip
           path: latex/ensps-colorscheme.zip
 
