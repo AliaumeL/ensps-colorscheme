@@ -2,8 +2,6 @@ This directory contains the package
 
      name: ensps-colorscheme
      license: LaTeX Project Public License version 1.3c or above
-     version: v0.0.1
-     date: 2024/05/29
      author: Aliaume LOPEZ
      mail: ad.lopez@uw.edu.pl
      web: https://ctan.org/pkg/ensps-colorscheme

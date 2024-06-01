@@ -27,7 +27,6 @@ $(PKG).zip: $(PKG).sty $(PKG)-doc.pdf
 	cp Makefile $(PKG)/Makefile
 	cp LICENSE  $(PKG)/LICENSE
 	cp README.md $(PKG)/README.md
-	cp $(PKG).sty $(PKG)/$(PKG).sty
 	cp $(PKG)-doc.pdf $(PKG)/$(PKG)-doc.pdf
 	cp $(PKG).dtx $(PKG)/$(PKG).dtx
 	cp $(PKG).ins $(PKG)/$(PKG).ins
