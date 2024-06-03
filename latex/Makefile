@@ -2,6 +2,9 @@
 
 PKG=ensps-colorscheme
 DOC=$(PKG)-doc.pdf
+# The version of the package is obtained using git decribe,
+# and if it fails we use the value v0.0.0 as a default.
+VER=$(shell git describe --tags --always --dirty|| echo "v0.0.0")
 
 $(PKG).sty: $(PKG).ins
 	latex $(PKG).ins
