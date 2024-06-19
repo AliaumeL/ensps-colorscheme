@@ -16,15 +16,9 @@
 % \fi
 %
 % \iffalse
-%<ensps>\NeedsTeXFormat{LaTeX2e}[2023-11-01] 
-%<ensps>\ProvidesPackage{ensps-colorscheme}
-%<ensps> [2024-05-03 v0.0.1 ENS Paris-Saclay Colors and Theme]
-%<ensps>\RequirePackage{xcolor}
-%<ensps>\RequirePackage{tikz}
 %
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{ensps-colorscheme}
 \EnableCrossrefs
@@ -70,16 +64,15 @@
 % For now, the package only provides colors and a way to visualize them.
 %
 % \section{Usage}
-% \DescribeMacro{\enspscolordefs}
 % The package defines the following colors:
 % \begin{itemize}
 %   \foreach \name in {A,B,C,D} {
 %       \foreach \hue in {1,2,3,4,5} {
 %           \item \texttt{\name\hue}:
 %               \textcolor{\name\hue}{\rule{0.5em}{0.5em}}
-%               (\texttt{\textbackslash\name\hue bg}
+%               (respectively \texttt{\name\hue bg}
 %                \textcolor{\name\hue bg}{\rule{0.5em}{0.5em}} and 
-%                \texttt{\textbackslash\name\hue hint}
+%                \texttt{\name\hue hint}
 %                \textcolor{\name\hue hint}{\rule{0.5em}{0.5em}})
 %       }
 %   }
@@ -99,11 +92,14 @@
 %
 % \section{Implementation}
 %
-% \begin{macro}{\enspscolordefs}
 % Here we define the colors for the ENS Paris-Saclay theme.
 % The main colors are hard coded, and the \texttt{bg} and \texttt{hint} colors
 % are then computed from the main colors.
 %    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}[2023-11-01] 
+\ProvidesPackage{ensps-colorscheme}
+ [2024-05-03 v0.0.1 ENS Paris-Saclay Colors and Theme]
+\RequirePackage{tikz}
 \definecolor{Prune}{RGB}{99,0,60}
 \definecolor{A1}{HTML}{000000}
 \definecolor{B1}{RGB}{49,62,72}
@@ -133,7 +129,6 @@
     }
 }
 %    \end{macrocode}
-% \end{macro}
 %
 % \begin{macro}{\enspscolors}
 % Create a small tikzpicture with the ENS Paris-Saclay colors.
